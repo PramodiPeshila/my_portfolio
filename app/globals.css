@@ -5,8 +5,15 @@
   background-color: #fcf4ff;
 }
 
+.dark {
+  background-color: #11001F; /* Your darkTheme color */
+  color: white;
+}
 .hover-bg-lightHover:hover {
   background-color: #fcf4ff;
+}
+.bg-darkTheme {
+  background-color: #11001F;
 }
 
 .shadow-black {
@@ -19,6 +26,15 @@
 
 .hover-shadow-black:hover {
   box-shadow: 4px 4px 0 #000;
+}
+
+.hover-shadow-white:hover {
+  box-shadow: 4px 4px 0 #fff;
+}
+
+/* Add dark hover background */
+.dark .hover-bg-darkHover:hover {
+  background-color: rgba(42, 0, 74, 0.5); /* darkHover with opacity */
 }
 
 * {
