@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <div className='mt-20'>
       <div className='text-center'>
-        <Image src={assets.logo} alt="Footer Background" className="w-36 mx-auto mb-2" /> 
+        <h2 className="text-3xl font-bold font-Ovo mb-2 text-white">Pramodi Peshila</h2>
         
         <div className='w-max flex items-center gap-2 mx-auto'>
-          <Image src={assets.mail_icon} alt=" " className='w-6' />
+          <Image src={assets.mail_icon_dark} alt=" " className='w-6' />
           ppeshila7@gmail.com
         </div>
       </div>
