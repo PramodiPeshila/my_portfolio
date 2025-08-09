@@ -35,6 +35,9 @@ import right_arrow from './right-arrow.png';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
+import github from './github.png';
+import sql from './sql.png';
+import reactVs from './reactVs.png';
 
 export const assets = {
     user_image,
@@ -73,45 +76,54 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    github,
+    reactVs,
+    sql
 };
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'FoodWagon - Restaurant Management System',
+        description: 'A full-stack restaurant management system built with React and Node.js. Features include user authentication, menu management, and order tracking.',
         bgImage: '/work-1.png',
+        link: 'https://github.com/Lakshan102/mern-stack-group-project',
+        technologies: ['React', 'Node.js', 'MongoDB', 'Express']
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
+        title: 'EduFlex - School Management System',
+        description: 'A collaborative school management application with real-time updates. Built using HTML,CSS,JavaScript and PHP featuring student enrollment, class scheduling, and progress tracking.',
         bgImage: '/work-2.png',
+        link: 'https://github.com/nikilasilva/EduFlex',
+        technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL']
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
+        title: 'LittleSteps - DayCare Management System',
+        description: 'A mobile Application developed to streamline daycare operations built with React Native and Node.js. Features include parent and staff portals, child enrollment, attendance tracking, and activity scheduling.',
         bgImage: '/work-3.png',
+        link: 'https://github.com/LittleSteps2025',
+        technologies: ['React Native', 'Node.js', 'Firebase', 'PostgreSQL']
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
+        title: 'LinkTalk - Real Time Chat Application',
+        description: 'A real-time chat application built with Flutter and Firebase and SQLite. Features include user authentication, QR Scanning and QR generation for secure messaging.',
         bgImage: '/work-4.png',
+        link: 'https://github.com/PramodiPeshila/real_time_chat_app',
+        technologies: ['Flutter', 'Firebase', 'SQLite', 'Dart']
     },
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+    { icon: assets.sql, title: 'Structured Query Language ( SQL)', description: 'Deep dive into SQL fundamentals, advanced queries, and database optimization techniques.Here is a detailed explanation.', link: 'https://medium.com/@ppeshila7/structured-query-language-sql-e326f5c00c2c' },
+    { icon: assets.reactVs, title: 'React vs Angular', description: 'React and Angular are two most popular front-end technologies used for building modern web applications.Here is a Comprehensive comparison of React with Angular.', link: 'https://medium.com/@ppeshila7/react-vs-angular-5ba4aa649a74' },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Skills', description: 'HTML, CSS, JavaScript, React Js, Next Js, Node Js, PHP, MySQL, PostgreSQL' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'Bsc in Computer Science, University Of Colombo School Of Computing.|Advanced Level, Vijayaba National School- Hungama' },
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: '4+ projects' }
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git , assets.github
 ];
