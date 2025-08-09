@@ -44,30 +44,82 @@ const About = () => {
                     transition={{ duration: 0.6 , delay: 0.8 }}
                   className="flex-1">
                   <p className="mb-10 max-w-2xl font-Ovo">
-                      I am a passionate software developer with a focus on building high-quality web applications.</p>
+                      I am a third-year Computer Science undergraduate at UCSC with a strong passion for exploring new
+ technologies and applying them to solve real-world challenges. I have hands-on experience in full-stack
+ development and am currently seeking an entry-level opportunity to contribute to a dynamic and col
+laborative team.</p>
                   
-                  <motion.ul
+                  <motion.div
                             initial={{opacity:0 }}
                             whileInView={{opacity: 1  }}
                             transition={{ duration: 0.8 , delay: 1 }}
-                      className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
-                      {infoList.map(({ icon, iconDark, title, description }, index) => (
-
-                          <motion.li className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover-bg-lightHover hover:translate-y-1 duration-500 hover-shadow-black dark:border-white hover-shadow-white  hover-bg-darkHover "
+                      className="max-w-4xl">
+                      
+                      {/* Skills horizontal card */}
+                      {infoList.filter(item => item.title === 'Skills').map(({ icon, iconDark, title, description }, index) => (
+                          <motion.div 
                               key={index}
-                             
-                              whileHover={{
-                                  scale: 1.05
-                                  
-                              }}
-                              
+                              className="border-[0.5px] border-gray-400 rounded-xl p-6 mb-6 cursor-pointer hover-bg-lightHover hover:translate-y-1 duration-500 hover-shadow-black dark:border-white hover-shadow-white hover-bg-darkHover"
+                              whileHover={{ scale: 1.02 }}
                           >
-                              <Image src={iconDark} alt={title} className="w-7 mt-3" />
-                              <h3 className="my-4 font-semibold text-white">{title}</h3>
-                              <p className="text-white/80 text-sm">{description}</p>
-                          </motion.li>
+                              <div className="flex items-start gap-4 mb-4">
+                                  <Image src={iconDark} alt={title} className="w-7 mt-1" />
+                                  <h3 className="text-xl font-semibold text-white">{title}</h3>
+                              </div>
+                              <div className="flex flex-wrap gap-2">
+                                  {description.split(', ').map((skill, skillIndex) => (
+                                      <span 
+                                          key={skillIndex} 
+                                          className="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-xs text-white/90 border border-white/20 hover:border-white/30 transition-all duration-300 cursor-pointer"
+                                      >
+                                          {skill.trim()}
+                                      </span>
+                                  ))}
+                              </div>
+                          </motion.div>
                       ))}
-                  </motion.ul>
+
+                      {/* Education and Projects vertical cards */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                          {infoList.filter(item => item.title !== 'Skills').map(({ icon, iconDark, title, description }, index) => (
+                              <motion.div 
+                                  key={index}
+                                  className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover-bg-lightHover hover:translate-y-1 duration-500 hover-shadow-black dark:border-white hover-shadow-white hover-bg-darkHover flex flex-col"
+                                  whileHover={{ scale: 1.05 }}
+                              >
+                                  <Image src={iconDark} alt={title} className="w-7 mt-3" />
+                                  <h3 className="my-4 font-semibold text-white">{title}</h3>
+                                  <div className="flex-grow">
+                                      {title === 'Education' ? (
+                                          <div className="text-white/80 text-sm">
+                                              {description.split('|').map((line, lineIndex) => (
+                                                  <p key={lineIndex} className={lineIndex > 0 ? 'mt-3' : ''}>
+                                                      {line.trim()}
+                                                  </p>
+                                              ))}
+                                          </div>
+                                      ) : (
+                                          <p className="text-white/80 text-sm">{description}</p>
+                                      )}
+                                  </div>
+                                  
+                                  {/* Explore More button for Projects card */}
+                                  {title === 'Projects' && (
+                                      <motion.a
+                                          href="https://github.com/PramodiPeshila"
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="mt-4 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/50 rounded-lg text-xs text-white/90 hover:text-white text-center transition-all duration-300 flex items-center justify-center gap-2"
+                                          whileHover={{ scale: 1.05 }}
+                                      >
+                                          Explore More
+                                          <Image src={assets.right_arrow_bold_dark} alt="arrow" className="w-3" />
+                                      </motion.a>
+                                  )}
+                              </motion.div>
+                          ))}
+                      </div>
+                  </motion.div>
 
                   <motion.h4
                       initial={{opacity:0  , y:20}}
