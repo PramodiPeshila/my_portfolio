@@ -22,36 +22,55 @@ const Work = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="text-center  text-5xl font-Ovo text-black dark:text-white">My Latest work</motion.h2>
       
-      <motion.p
+      {/* <motion.p
         
          initial={{ opacity: 0,  }}
         whileInView={{ opacity: 1, }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-black dark:text-white">welcome to my portfolio.I offer a range of services to help you achieve your goals.........................................</motion.p>
+        className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-black dark:text-white">welcome to my portfolio.I offer a range of services to help you achieve your goals.........................................</motion.p> */}
           
           
       <motion.div
          initial={{ opacity: 0 }}
         whileInView={{ opacity: 1}}
         transition={{ duration: 0.6, delay: 0.9 }}
-        className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-10 gap-5 dark:text-black' >
+        className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-10 gap-5 dark:text-black' >
               {workData.map((project, index) => (
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                   key={index}
-                  className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group'
-                  style={{ backgroundImage: `url(${project.bgImage})` }} >
-                  <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center justify-between px-5 py-3 justify-between duration-500 group-hover:bottom-7'>
-                    <div>
-                      <h2 className='font-semibold'>{project.title}</h2>
-                      <p className='text-sm text-gray-700'>{project.description}</p>
-                    </div>
-                    <div className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition'>
-                      <Image src={assets.send_icon} alt='send icon' className='w-5' />
-                    </div>
+                  className='border border-gray-400 rounded-xl overflow-hidden hover-shadow-black cursor-pointer hover-bg-lightHover hover:translate-y-1 duration-500 hover-bg-darkHover hover-shadow-white bg-white/5 hover:bg-white/10'>
+                  
+                  {/* Project Image */}
+                  <div className="w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                    <div 
+                      className='w-full h-full bg-no-repeat bg-cover bg-center'
+                      style={{ backgroundImage: `url(${project.bgImage})` }}
+                    />
                   </div>
                   
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-gray-700 dark:text-white mb-3">{project.title}</h3>
+                    <p className="text-sm text-gray-600 leading-6 dark:text-white/80 mb-4">{project.description}</p>
+                    
+                    {/* Technology Cards */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies && project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 text-xs font-medium bg-white/10 dark:bg-white/20 text-gray-700 dark:text-white rounded-full border border-gray-300 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/30 transition-all duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <a href={project.link} className="inline-flex items-center gap-2 text-sm px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-300 text-white">
+                      Explore Project <Image src={assets.right_arrow_white} alt="" className='w-4'/>
+                    </a>
+                  </div>
                 </motion.div>
               ))}
       </motion.div>
@@ -62,7 +81,7 @@ const Work = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1.1 }}
         href="" className='w-max flex items-center gap-2 justify-center text-white border-[0.5px] border-white rounded-full py-3 px-10 mx-auto my-20 hover-bg-darkHover duration-500'>
-      Show More<Image src={assets.right_arrow_bold_dark} alt='right arrow' className='w-4' />
+      View More on Github<Image src={assets.right_arrow_bold_dark} alt='right arrow' className='w-4' />
               </motion.a>
       
     </motion.div>
