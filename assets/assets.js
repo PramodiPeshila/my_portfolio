@@ -86,7 +86,7 @@ export const workData = [
     {
         title: 'FoodWagon - Restaurant Management System',
         description: 'A full-stack restaurant management system built with React and Node.js. Features include user authentication, menu management, and order tracking.',
-        bgImage: './work-1.png',
+        bgImage: '/work-1.png',
         link: 'https://github.com/Lakshan102/mern-stack-group-project',
         technologies: ['React', 'Node.js', 'MongoDB', 'Express']
     },
