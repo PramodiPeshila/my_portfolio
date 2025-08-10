@@ -3,6 +3,12 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'motion/react'
 
+// Helper function to get the correct image path for GitHub Pages
+const getImagePath = (imagePath) => {
+  const basePath = process.env.NODE_ENV === 'production' ? '/my_portfolio' : '';
+  return `${basePath}${imagePath}`;
+};
+
 const Work = () => {
   return (
     <motion.div
@@ -46,7 +52,7 @@ const Work = () => {
                   <div className="w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
                     <div 
                       className='w-full h-full bg-no-repeat bg-cover bg-center'
-                      style={{ backgroundImage: `url(${project.bgImage})` }}
+                      style={{ backgroundImage: `url(${getImagePath(project.bgImage)})` }}
                     />
                   </div>
                   
